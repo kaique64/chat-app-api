@@ -9,9 +9,10 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/chat")
@@ -24,9 +25,9 @@ public class ChatController {
     SimpMessagingTemplate template;
 
     @MessageMapping("/chat-message")
-    @SendTo("/chat/message/send")
-    @PostMapping("/send")
-    public ChatResponseDTO sendMessage(@Payload @Valid SendMessageDTO messageDTO) {
+    @SendTo("/chat/message")
+    @PostMapping("/messages/send")
+    public ChatResponseDTO sendMessage(@Payload @RequestBody @Valid SendMessageDTO messageDTO) {
         template.convertAndSend("/chat/message", messageDTO);
         return chatUseCase.sendMessage(messageDTO);
     }
