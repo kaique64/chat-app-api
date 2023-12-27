@@ -13,9 +13,9 @@ public class ChatResponseDTO {
 
     private String id;
 
-    private String from;
+    private String senderId;
 
-    private String to;
+    private String recipientId;
 
     private String message;
 

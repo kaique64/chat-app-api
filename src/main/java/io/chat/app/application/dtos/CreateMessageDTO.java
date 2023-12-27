@@ -15,12 +15,12 @@ public class CreateMessageDTO {
     @NotNull
     @NotBlank
     @NotEmpty
-    private String from;
+    private String senderId;
 
     @NotNull
     @NotBlank
     @NotEmpty
-    private String to;
+    private String recipientId;
 
     @NotNull
     @NotBlank

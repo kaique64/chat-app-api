@@ -20,9 +20,9 @@ public class Chat {
     @Id
     private String id;
 
-    private String from;
+    private String senderId;
 
-    private String to;
+    private String recipientId;
 
     private String message;
 

@@ -36,18 +36,18 @@ public class SaveMessageServiceTest {
 
     @BeforeEach
     public void setup() {
-        messageDTO.setFrom("user1");
-        messageDTO.setTo("user2");
+        messageDTO.setSenderId("user1");
+        messageDTO.setRecipientId("user2");
         messageDTO.setMessage("Hello");
 
         sentMessage.setId("1");
-        sentMessage.setFrom("user1");
-        sentMessage.setTo("user2");
+        sentMessage.setSenderId("user1");
+        sentMessage.setRecipientId("user2");
         sentMessage.setMessage("Hello");
 
         responseDTO.setId(sentMessage.getId());
-        responseDTO.setFrom(sentMessage.getFrom());
-        responseDTO.setTo(sentMessage.getTo());
+        responseDTO.setSenderId(sentMessage.getSenderId());
+        responseDTO.setRecipientId(sentMessage.getRecipientId());
         responseDTO.setMessage(sentMessage.getMessage());
 
         MockitoAnnotations.openMocks(this);
@@ -66,8 +66,8 @@ public class SaveMessageServiceTest {
         // Assert
         assertNotNull(result);
         assertEquals(sentMessage.getId(), result.getId());
-        assertEquals(sentMessage.getFrom(), result.getFrom());
-        assertEquals(sentMessage.getTo(), result.getTo());
+        assertEquals(sentMessage.getSenderId(), result.getSenderId());
+        assertEquals(sentMessage.getRecipientId(), result.getRecipientId());
         assertEquals(sentMessage.getMessage(), result.getMessage());
         // Verify interactions
         verify(modelMapper, times(1)).map(messageDTO, Chat.class);
