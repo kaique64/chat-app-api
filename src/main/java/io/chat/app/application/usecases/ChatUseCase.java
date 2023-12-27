@@ -1,9 +1,9 @@
 package io.chat.app.application.usecases;
 
 import io.chat.app.application.dtos.ChatResponseDTO;
-import io.chat.app.application.dtos.SendMessageDTO;
+import io.chat.app.application.dtos.CreateMessageDTO;
 import io.chat.app.application.services.GetMessagesService;
-import io.chat.app.application.services.SendMessageService;
+import io.chat.app.application.services.SaveMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +13,13 @@ import java.util.List;
 public class ChatUseCase {
 
     @Autowired
-    private SendMessageService sendMessageService;
+    private SaveMessageService saveMessageService;
 
     @Autowired
     private GetMessagesService getMessagesService;
 
-    public ChatResponseDTO sendMessage(SendMessageDTO messageDTO) {
-        return sendMessageService.sendMessage(messageDTO);
+    public ChatResponseDTO saveMessage(CreateMessageDTO messageDTO) {
+        return saveMessageService.saveMessage(messageDTO);
     }
 
     public List<ChatResponseDTO> getMessagesByUserId(String userId) {
