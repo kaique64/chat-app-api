@@ -23,7 +23,7 @@ public class ChatUseCase {
     }
 
     public List<ChatResponseDTO> getMessagesByUserId(String from, String to) {
-        return getMessagesService.getMessagesByUserId(from, to);
+        return getMessagesService.getMessagesBySenderAndRecipient(from, to);
     }
 
 }
