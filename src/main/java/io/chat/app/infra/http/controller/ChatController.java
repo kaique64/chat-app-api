@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/api/chat")
 public class ChatController {
 
@@ -25,11 +26,16 @@ public class ChatController {
     SimpMessagingTemplate template;
 
     @MessageMapping("/chat-message")
-    @SendTo("/chat/message")
+    @SendTo("/chat/messages")
     @PostMapping("/messages/send")
     public ChatResponseDTO sendMessage(@Payload @RequestBody @Valid SendMessageDTO messageDTO) {
         template.convertAndSend("/chat/message", messageDTO);
         return chatUseCase.sendMessage(messageDTO);
     }
 
+    @GetMapping("/messages")
+    @SendTo("/chat/messages")
+    public List<ChatResponseDTO> getMessagesByUser(@RequestParam String userId) {
+        return chatUseCase.getMessagesByUserId(userId);
+    }
 }

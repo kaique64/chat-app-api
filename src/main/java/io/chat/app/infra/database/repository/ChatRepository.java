@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ChatRepository extends MongoRepository<Chat, String> {
-    @Query("{'$or':[{'to': ?0}, {'from': ?1}]}")
-    List<Chat> getMessagesByUser(String to, String from);
+    @Query("{'$or':[{'to': ?0}, {'from': ?0}]}")
+    List<Chat> findMessagesByUser(String userId);
 }
