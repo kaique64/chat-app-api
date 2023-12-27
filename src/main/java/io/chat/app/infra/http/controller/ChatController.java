@@ -3,7 +3,7 @@ package io.chat.app.infra.http.controller;
 import io.chat.app.application.chat.dtos.ChatNotificationDTO;
 import io.chat.app.application.chat.dtos.ChatResponseDTO;
 import io.chat.app.application.chat.dtos.CreateMessageDTO;
-import io.chat.app.application.usecases.ChatUseCase;
+import io.chat.app.usecases.ChatUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
