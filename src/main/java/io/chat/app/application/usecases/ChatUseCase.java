@@ -22,8 +22,8 @@ public class ChatUseCase {
         return saveMessageService.saveMessage(messageDTO);
     }
 
-    public List<ChatResponseDTO> getMessagesByUserId(String userId) {
-        return getMessagesService.getMessagesByUserId(userId);
+    public List<ChatResponseDTO> getMessagesByUserId(String from, String to) {
+        return getMessagesService.getMessagesByUserId(from, to);
     }
 
 }

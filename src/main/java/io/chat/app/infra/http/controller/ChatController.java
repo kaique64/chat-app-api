@@ -43,7 +43,7 @@ public class ChatController {
     }
 
     @GetMapping("/messages")
-    public List<ChatResponseDTO> getMessagesByUser(@RequestParam String userId) {
-        return chatUseCase.getMessagesByUserId(userId);
+    public List<ChatResponseDTO> getMessagesByUser(@RequestParam String from, @RequestParam String to) {
+        return chatUseCase.getMessagesByUserId(from, to);
     }
 }
