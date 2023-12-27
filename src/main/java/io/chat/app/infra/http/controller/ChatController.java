@@ -1,5 +1,6 @@
 package io.chat.app.infra.http.controller;
 
+import io.chat.app.application.dtos.ChatNotificationDTO;
 import io.chat.app.application.dtos.ChatResponseDTO;
 import io.chat.app.application.dtos.CreateMessageDTO;
 import io.chat.app.application.usecases.ChatUseCase;
@@ -27,8 +28,18 @@ public class ChatController {
     @MessageMapping("/chat-message")
     @SendTo("/chat/messages")
     public ChatResponseDTO sendMessage(@Payload @Valid CreateMessageDTO messageDTO) {
-        template.convertAndSend("/chat/message", messageDTO);
-        return chatUseCase.saveMessage(messageDTO);
+        ChatResponseDTO sentMessage = chatUseCase.saveMessage(messageDTO);
+        template.convertAndSendToUser(
+                sentMessage.getRecipientId(),
+                "/chat/messages",
+                new ChatNotificationDTO(
+                        sentMessage.getId(),
+                        sentMessage.getSenderId(),
+                        sentMessage.getRecipientId(),
+                        sentMessage.getMessage()
+                )
+        );
+        return sentMessage;
     }
 
     @GetMapping("/messages")
