@@ -20,7 +20,7 @@ public class GetMessagesService implements IGetMessagesService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<ChatResponseDTO> getMessagesByUserId(String from, String to) {
+    public List<ChatResponseDTO> getMessagesBySenderAndRecipient(String from, String to) {
         List<Chat> chatList = chatRepository.findMessagesByUser(from, to);
 
         return chatList.stream()

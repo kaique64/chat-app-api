@@ -5,5 +5,5 @@ import io.chat.app.application.chat.dtos.ChatResponseDTO;
 import java.util.List;
 
 public interface IGetMessagesService {
-    public List<ChatResponseDTO> getMessagesByUserId(String from, String to);
+    public List<ChatResponseDTO> getMessagesBySenderAndRecipient(String from, String to);
 }
