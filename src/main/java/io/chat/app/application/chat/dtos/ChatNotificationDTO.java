@@ -1,4 +1,4 @@
-package io.chat.app.application.dtos;
+package io.chat.app.application.chat.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

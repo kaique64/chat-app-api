@@ -1,6 +1,6 @@
-package io.chat.app.application.services.interfaces;
+package io.chat.app.application.chat.services.interfaces;
 
-import io.chat.app.application.dtos.ChatResponseDTO;
+import io.chat.app.application.chat.dtos.ChatResponseDTO;
 
 import java.util.List;
 

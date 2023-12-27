@@ -1,7 +1,8 @@
 package io.chat.app.application.services;
 
-import io.chat.app.application.dtos.ChatResponseDTO;
-import io.chat.app.application.dtos.CreateMessageDTO;
+import io.chat.app.application.chat.dtos.ChatResponseDTO;
+import io.chat.app.application.chat.dtos.CreateMessageDTO;
+import io.chat.app.application.chat.services.SaveMessageService;
 import io.chat.app.infra.database.entity.Chat;
 import io.chat.app.infra.database.repository.ChatRepository;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,7 +1,7 @@
-package io.chat.app.application.services;
+package io.chat.app.application.chat.services;
 
-import io.chat.app.application.dtos.ChatResponseDTO;
-import io.chat.app.application.services.interfaces.IGetMessagesService;
+import io.chat.app.application.chat.dtos.ChatResponseDTO;
+import io.chat.app.application.chat.services.interfaces.IGetMessagesService;
 import io.chat.app.infra.database.entity.Chat;
 import io.chat.app.infra.database.repository.ChatRepository;
 import org.modelmapper.ModelMapper;
