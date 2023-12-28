@@ -1,6 +1,7 @@
 package io.chat.app.infra.database.repository;
 
 import io.chat.app.infra.database.entity.Chat;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -9,5 +10,5 @@ import java.util.List;
 
 public interface ChatRepository extends MongoRepository<Chat, String> {
     @Query("{'$and':[{'senderId': ?0}, {'recipientId': ?1}]}")
-    List<Chat> findMessagesBySenderAndRecipient(String from, String to);
+    List<Chat> findMessagesBySenderAndRecipient(String from, String to, Sort sort);
 }
