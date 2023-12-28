@@ -14,10 +14,13 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -50,6 +53,28 @@ public class GetMessagesServiceTest {
         messages.add(chatMessage);
 
         MockitoAnnotations.openMocks(this);
+    }
+
+    private Chat createChat(String from, String to, String message, LocalDateTime createdAt) {
+        Chat chat = new Chat();
+        chat.setSenderId(from);
+        chat.setRecipientId(to);
+        chat.setMessage(message);
+        chat.setCreatedAt(createdAt);
+        return chat;
+    }
+
+    private void mockModelMapperMapMethodToReturnNonNullValues () {
+        when(modelMapper.map(any(), eq(ChatResponseDTO.class)))
+                .thenAnswer(invocation -> {
+                    Chat inputChat = invocation.getArgument(0);
+                    ChatResponseDTO chatResponseDTO = new ChatResponseDTO();
+                    chatResponseDTO.setSenderId(inputChat.getSenderId());
+                    chatResponseDTO.setRecipientId(inputChat.getRecipientId());
+                    chatResponseDTO.setMessage(inputChat.getMessage());
+                    chatResponseDTO.setCreatedAt(inputChat.getCreatedAt());
+                    return chatResponseDTO;
+                });
     }
 
     @Test
