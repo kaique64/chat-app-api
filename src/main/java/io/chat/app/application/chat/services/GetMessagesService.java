@@ -21,7 +21,7 @@ public class GetMessagesService implements IGetMessagesService {
     private ModelMapper modelMapper;
 
     public List<ChatResponseDTO> getMessagesBySenderAndRecipient(String from, String to) {
-        List<Chat> chatList = chatRepository.findMessagesByUser(from, to);
+        List<Chat> chatList = chatRepository.findMessagesBySenderAndRecipient(from, to);
 
         return chatList.stream()
                 .map(chatMessage -> modelMapper.map(chatMessage, ChatResponseDTO.class))

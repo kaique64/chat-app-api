@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface ChatRepository extends MongoRepository<Chat, String> {
     @Query("{'$or':[{'senderId': ?0}, {'recipientId': ?1}]}")
-    List<Chat> findMessagesByUser(String from, String to);
+    List<Chat> findMessagesBySenderAndRecipient(String from, String to);
 }
