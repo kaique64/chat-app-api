@@ -149,7 +149,7 @@
 				<version>1.15.3</version>
 				<configuration>
 					<targetClasses>
-						<param>io.chat.app.application.chat.services*</param>
+						<param>io.chat.app.application.*.services.*</param>
 					</targetClasses>
 					<targetTests>
 						<param>io.chat.app*</param>
