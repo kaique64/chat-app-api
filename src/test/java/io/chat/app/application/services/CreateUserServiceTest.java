@@ -2,6 +2,7 @@ package io.chat.app.application.services;
 
 import io.chat.app.application.user.dtos.CreateUserDTO;
 import io.chat.app.application.user.dtos.UserResponseDTO;
+import io.chat.app.application.exceptions.AppException;
 import io.chat.app.application.user.services.CreateUserService;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
@@ -14,10 +15,14 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class CreateUserServiceTest {
@@ -30,6 +35,9 @@ public class CreateUserServiceTest {
 
     @Mock
     private ModelMapper modelMapper;
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
 
     @InjectMocks
     private CreateUserService createUserService;
@@ -70,15 +78,31 @@ public class CreateUserServiceTest {
     @Test
     @DisplayName("Should hash the user's password before saving")
     public void test_hash_user_password_before_saving() {
+        BCryptPasswordEncoder mockedPasswordEncoder = new BCryptPasswordEncoder();
+        String mockedEncoding = mockedPasswordEncoder.encode(userDTO.getPassword());
+
         when(modelMapper.map(userDTO, User.class)).thenReturn(user);
         when(userRepository.insert(any(User.class))).thenReturn(user);
         when(modelMapper.map(user, UserResponseDTO.class)).thenReturn(responseDTO);
+        when(passwordEncoder.encode(userDTO.getPassword())).thenReturn(mockedEncoding);
 
         UserResponseDTO responseDTO = createUserService.create(userDTO);
+        responseDTO.setPassword(userDTO.getPassword());
 
         assertNotNull(responseDTO);
         assertNotNull(responseDTO.getPassword());
         assertNotEquals("123", responseDTO.getPassword());
+    }
+
+    @Test
+    @DisplayName("Saving a new user with non-unique email should throw AppException")
+    public void test_saveUserWithNonUniqueEmail() {
+        when(userRepository.findByEmail(userDTO.getEmail())).thenReturn(Optional.of(new User()));
+
+        AppException appException = assertThrows(AppException.class, () -> createUserService.create(userDTO));
+        assertEquals("User already exists", appException.getMessage());
+        verify(userRepository).findByEmail(userDTO.getEmail());
+        verify(userRepository, never()).save(any(User.class));
     }
 
     @Test
@@ -91,9 +115,7 @@ public class CreateUserServiceTest {
 
         CreateUserService createUserService = new CreateUserService();
 
-        assertThrows(Exception.class, () -> {
-            createUserService.create(userDTO);
-        });
+        assertThrows(Exception.class, () -> createUserService.create(userDTO));
     }
 
     @Test
@@ -106,9 +128,7 @@ public class CreateUserServiceTest {
 
         CreateUserService createUserService = new CreateUserService();
 
-        assertThrows(Exception.class, () -> {
-            createUserService.create(userDTO);
-        });
+        assertThrows(Exception.class, () -> createUserService.create(userDTO));
     }
 
     @Test
@@ -121,9 +141,7 @@ public class CreateUserServiceTest {
 
         CreateUserService createUserService = new CreateUserService();
 
-        assertThrows(Exception.class, () -> {
-            createUserService.create(userDTO);
-        });
+        assertThrows(Exception.class, () -> createUserService.create(userDTO));
     }
 
 }
