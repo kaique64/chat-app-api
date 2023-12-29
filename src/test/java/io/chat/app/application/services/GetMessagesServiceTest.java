@@ -119,8 +119,6 @@ public class GetMessagesServiceTest {
         // Assert
         assertEquals(chatList.size(), result.size());
         for (int i = 0; i < result.size() - 1; i++) {
-            System.out.println((i));
-            System.out.println(result.get(i).getCreatedAt());
             assertTrue(result.get(i).getCreatedAt().getMinute() > result.get(i + 1).getCreatedAt().getMinute());
         }
     }
