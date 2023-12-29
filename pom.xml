@@ -81,6 +81,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.pitest</groupId>
+			<artifactId>pitest-junit5-plugin</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -118,14 +125,13 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
 				<version>1.15.3</version>
 				<configuration>
 					<targetClasses>
-						<param>io.chat.app.application.services*</param>
+						<param>io.chat.app.application.chat.services*</param>
 					</targetClasses>
 					<targetTests>
 						<param>io.chat.app*</param>
@@ -133,10 +139,10 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>report</id>
+						<id>pitest</id>
 						<phase>test</phase>
 						<goals>
-							<goal>report</goal>
+							<goal>mutationCoverage</goal>
 						</goals>
 					</execution>
 				</executions>
