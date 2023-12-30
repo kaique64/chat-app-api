@@ -1,4 +1,4 @@
-package io.chat.app.application.services;
+package io.chat.app.application.services.chat;
 
 import io.chat.app.application.chat.dtos.ChatResponseDTO;
 import io.chat.app.application.chat.dtos.CreateMessageDTO;

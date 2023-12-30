@@ -1,4 +1,4 @@
-package io.chat.app.application.services;
+package io.chat.app.application.services.user;
 
 import io.chat.app.application.user.dtos.CreateUserDTO;
 import io.chat.app.application.user.dtos.UserResponseDTO;
