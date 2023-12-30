@@ -22,4 +22,10 @@ public class TokenService implements ITokenService {
                 .withExpiresAt(LocalDateTime.now().plusHours(24).toInstant(ZoneOffset.of(ZONE_ID)))
                 .sign(Algorithm.HMAC256(SECRET));
     }
+
+    public String getSubject(String token) {
+        return JWT.require(Algorithm.HMAC256(SECRET))
+                .build().verify(token)
+                .getSubject();
+    }
 }
