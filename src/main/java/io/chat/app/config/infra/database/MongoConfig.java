@@ -1,4 +1,4 @@
-package io.chat.app.config;
+package io.chat.app.config.infra.database;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;

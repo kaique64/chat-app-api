@@ -1,4 +1,4 @@
-package io.chat.app.config;
+package io.chat.app.config.infra.http;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

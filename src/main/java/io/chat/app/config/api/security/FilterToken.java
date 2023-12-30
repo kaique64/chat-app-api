@@ -1,4 +1,4 @@
-package io.chat.app.config;
+package io.chat.app.config.api.security;
 
 import io.chat.app.application.user.services.TokenService;
 import io.chat.app.infra.database.entity.User;
