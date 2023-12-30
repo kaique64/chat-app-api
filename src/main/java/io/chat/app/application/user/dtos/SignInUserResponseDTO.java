@@ -7,12 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserResponseDTO {
+public class SignInUserResponseDTO {
     private String id;
 
     private String name;
 
     private String email;
 
-    private String password;
+    private String token;
 }

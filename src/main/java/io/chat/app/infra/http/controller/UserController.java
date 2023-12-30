@@ -1,6 +1,8 @@
 package io.chat.app.infra.http.controller;
 
 import io.chat.app.application.user.dtos.CreateUserDTO;
+import io.chat.app.application.user.dtos.SignInUserDTO;
+import io.chat.app.application.user.dtos.SignInUserResponseDTO;
 import io.chat.app.application.user.dtos.UserResponseDTO;
 import io.chat.app.usecases.UserUseCase;
 import jakarta.validation.Valid;
@@ -22,6 +24,11 @@ public class UserController {
     @PostMapping
     public ResponseEntity<UserResponseDTO> create(@RequestBody @Valid CreateUserDTO userDTO) {
         return new ResponseEntity<>(userUseCase.create(userDTO), HttpStatus.CREATED);
+    }
+
+    @PostMapping("/sign-in")
+    public ResponseEntity<SignInUserResponseDTO> signIn(@RequestBody @Valid SignInUserDTO userDTO) {
+        return new ResponseEntity<>(userUseCase.signIn(userDTO), HttpStatus.OK);
     }
 
 }
