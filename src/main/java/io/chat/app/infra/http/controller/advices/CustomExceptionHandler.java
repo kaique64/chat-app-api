@@ -29,10 +29,11 @@ public class CustomExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
+    protected ResponseEntity<Map<String, Object>> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
+        HttpStatus statusResponse = HttpStatus.BAD_REQUEST;
         Map<String, Object> responseBody = new HashMap<>();
         responseBody.put("timestamp", LocalDateTime.now());
-        responseBody.put("status", HttpStatus.BAD_REQUEST.value());
+        responseBody.put("status", statusResponse.value());
 
         List<FieldError> fieldErrors = ex.getBindingResult().getFieldErrors();
         List<String> errors = new ArrayList<>();
@@ -44,6 +45,6 @@ public class CustomExceptionHandler {
 
         responseBody.put("errors", errors);
 
-        return new ResponseEntity<>(responseBody, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(responseBody, statusResponse);
     }
 }
