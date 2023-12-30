@@ -8,6 +8,7 @@ import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class CreateUserService implements ICreateUserService {
     public UserResponseDTO create(CreateUserDTO userDTO) {
         userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
 
-        if (userRepository.findByEmail(userDTO.getEmail()).isPresent()) throw new AppException("User already exists");
+        if (userRepository.findByEmail(userDTO.getEmail()).isPresent()) throw new AppException("User already exists", HttpStatus.BAD_REQUEST);
 
         User userCreated = userRepository.insert(modelMapper.map(userDTO, User.class));
 
