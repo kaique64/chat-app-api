@@ -3,6 +3,7 @@ package io.chat.app.application.user.services;
 import io.chat.app.application.exceptions.AppException;
 import io.chat.app.application.user.dtos.SignInUserDTO;
 import io.chat.app.application.user.dtos.SignInUserResponseDTO;
+import io.chat.app.application.user.services.interfaces.IAuthenticationService;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -20,7 +21,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class AuthenticationService implements UserDetailsService {
+public class AuthenticationService implements UserDetailsService, IAuthenticationService {
 
     @Autowired
     private UserRepository userRepository;
