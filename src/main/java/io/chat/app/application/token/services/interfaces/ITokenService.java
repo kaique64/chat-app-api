@@ -1,4 +1,4 @@
-package io.chat.app.application.user.services.interfaces;
+package io.chat.app.application.token.services.interfaces;
 
 import io.chat.app.infra.database.entity.User;
 

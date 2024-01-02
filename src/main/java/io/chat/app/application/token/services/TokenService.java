@@ -1,8 +1,8 @@
-package io.chat.app.application.user.services;
+package io.chat.app.application.token.services;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import io.chat.app.application.user.services.interfaces.ITokenService;
+import io.chat.app.application.token.services.interfaces.ITokenService;
 import io.chat.app.infra.database.entity.User;
 import org.springframework.stereotype.Service;
 

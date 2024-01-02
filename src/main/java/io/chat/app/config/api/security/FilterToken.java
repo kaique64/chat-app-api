@@ -1,6 +1,6 @@
 package io.chat.app.config.api.security;
 
-import io.chat.app.application.user.services.TokenService;
+import io.chat.app.application.token.services.TokenService;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
 import jakarta.servlet.FilterChain;
