@@ -1,8 +1,8 @@
 package io.chat.app.infra.http.controller;
 
 import io.chat.app.application.user.dtos.CreateUserDTO;
-import io.chat.app.application.authentication.dtos.SignInUserDTO;
-import io.chat.app.application.authentication.dtos.SignInUserResponseDTO;
+import io.chat.app.application.authentication.dtos.SignInDTO;
+import io.chat.app.application.authentication.dtos.SignInResponseDTO;
 import io.chat.app.application.user.dtos.UserResponseDTO;
 import io.chat.app.usecases.UserUseCase;
 import jakarta.validation.Valid;
@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @PostMapping("/sign-in")
-    public ResponseEntity<SignInUserResponseDTO> signIn(@RequestBody @Valid SignInUserDTO userDTO) {
+    public ResponseEntity<SignInResponseDTO> signIn(@RequestBody @Valid SignInDTO userDTO) {
         return new ResponseEntity<>(userUseCase.signIn(userDTO), HttpStatus.OK);
     }
 

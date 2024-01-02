@@ -5,23 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40f0686b-0bd8-46f7-b480-7e9a0fbf78ae" name="Changes" comment="'change packages'">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/interfaces/IAuthentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/Auth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/token/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/token/services/TokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/TokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/FilterToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/FilterToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Authentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/infra/http/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/infra/http/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/usecases/UserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/usecases/UserUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/io/chat/app/application/services/user/TokenServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/chat/app/application/services/user/TokenServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pit-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/pit-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pit-reports/io.chat.app.application.chat.services/GetMessagesService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/pit-reports/io.chat.app.application.chat.services/GetMessagesService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pit-reports/io.chat.app.application.chat.services/SaveMessageService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/pit-reports/io.chat.app.application.chat.services/SaveMessageService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pit-reports/io.chat.app.application.user.services/CreateUserService.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/pit-reports/io.chat.app.application.user.services/CreateUserService.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/SignInUserDTO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/SignInUserDTO.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/SignInUserResponseDTO.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/SignInUserResponseDTO.java.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.application.user.dtos/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/Authentication.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/Authentication.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/Token.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/Token.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/Token.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/Token.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security.user/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security/FilterToken.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.config.api.security/FilterToken.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.infra.http.controller/UserController.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.infra.http.controller/UserController.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.usecases/UserUseCase.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/io.chat.app.usecases/UserUseCase.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.AppApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.AppApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.chat.GetMessagesServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.chat.GetMessagesServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.chat.SaveMessageServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.chat.SaveMessageServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.user.CreateUserServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.user.CreateUserServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.user.TokenServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-io.chat.app.application.services.user.TokenServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.AppApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.AppApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.chat.GetMessagesServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.chat.GetMessagesServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.chat.SaveMessageServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.chat.SaveMessageServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.user.CreateUserServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.user.CreateUserServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.user.TokenServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/io.chat.app.application.services.user.TokenServiceTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +101,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging master",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Kaique/projects/app/app",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Diff & Merge"
   }
@@ -91,53 +116,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TokenServiceTest">
-    <configuration name="AuthenticationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
-      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthenticationServiceTest.testSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
-      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
-      <option name="METHOD_NAME" value="testSignIn" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthenticationServiceTest.testSignIn_ValidUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
-      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
-      <option name="METHOD_NAME" value="testSignIn_ValidUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AuthenticationServiceTest.test_valid_user_and_correct_password" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -150,6 +128,51 @@
       <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
       <option name="METHOD_NAME" value="test_valid_user_and_correct_password" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateUserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.CreateUserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetMessagesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.chat" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.chat.GetMessagesServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaveMessageServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.chat" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.chat.SaveMessageServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,10 +195,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TokenServiceTest" />
+        <item itemvalue="JUnit.GetMessagesServiceTest" />
+        <item itemvalue="JUnit.SaveMessageServiceTest" />
+        <item itemvalue="JUnit.CreateUserServiceTest" />
         <item itemvalue="JUnit.AuthenticationServiceTest.test_valid_user_and_correct_password" />
-        <item itemvalue="JUnit.AuthenticationServiceTest" />
-        <item itemvalue="JUnit.AuthenticationServiceTest.testSignIn_ValidUser" />
-        <item itemvalue="JUnit.AuthenticationServiceTest.testSignIn" />
       </list>
     </recent_temporary>
   </component>

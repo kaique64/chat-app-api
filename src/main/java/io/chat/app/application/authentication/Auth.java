@@ -1,9 +1,9 @@
 package io.chat.app.application.authentication;
 
-import io.chat.app.application.authentication.interfaces.IAuthentication;
+import io.chat.app.application.authentication.interfaces.IAuth;
+import io.chat.app.application.authentication.dtos.SignInDTO;
+import io.chat.app.application.authentication.dtos.SignInResponseDTO;
 import io.chat.app.application.exceptions.AppException;
-import io.chat.app.application.authentication.dtos.SignInUserDTO;
-import io.chat.app.application.authentication.dtos.SignInUserResponseDTO;
 import io.chat.app.application.token.services.TokenService;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class Authentication implements UserDetailsService, IAuthentication {
+public class Auth implements UserDetailsService, IAuth {
 
     @Autowired
     private UserRepository userRepository;
@@ -35,7 +36,7 @@ public class Authentication implements UserDetailsService, IAuthentication {
     private final AuthenticationManager authenticationManager;
 
     @Autowired
-    public Authentication(@Lazy AuthenticationManager authenticationManager) {
+    public Auth(@Lazy AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
 
@@ -47,23 +48,18 @@ public class Authentication implements UserDetailsService, IAuthentication {
         return null;
     }
 
-    public SignInUserResponseDTO signIn(SignInUserDTO userDTO) {
+    public SignInResponseDTO signIn(SignInDTO userDTO) {
         UserDetails userDetails = this.loadUserByUsername(userDTO.getEmail());
 
         if (userDetails == null) throw new AppException("User not found", HttpStatus.NOT_FOUND);
 
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword());
 
-        org.springframework.security.core.Authentication authenticate = authenticationManager.authenticate(authenticationToken);
-<<<<<<<< HEAD:src/main/java/io/chat/app/application/authentication/Authentication.java
-
-========
-        System.out.println("authenticate.getPrincipal() " + authenticate.getPrincipal());
->>>>>>>> a1016190e391ef274188a82430f07d7afc0dfbd6:src/main/java/io/chat/app/config/api/security/user/Authentication.java
+        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
         User user = (User) authenticate.getPrincipal();
 
         String token = tokenService.generateToken(user);
-        SignInUserResponseDTO signInUserResponseDTO = modelMapper.map(user, SignInUserResponseDTO.class);
+        SignInResponseDTO signInUserResponseDTO = modelMapper.map(user, SignInResponseDTO.class);
         signInUserResponseDTO.setToken(token);
 
         return signInUserResponseDTO;

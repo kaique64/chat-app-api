@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class SignInUserResponseDTO {
+public class SignInResponseDTO {
     private String id;
 
     private String name;

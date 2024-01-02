@@ -3,8 +3,8 @@ package io.chat.app.application.services.user;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import io.chat.app.application.authentication.dtos.SignInUserDTO;
-import io.chat.app.application.authentication.dtos.SignInUserResponseDTO;
+import io.chat.app.application.authentication.dtos.SignInDTO;
+import io.chat.app.application.authentication.dtos.SignInResponseDTO;
 import io.chat.app.application.token.services.TokenService;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
@@ -31,8 +31,8 @@ public class TokenServiceTest {
     private static final String SECRET = "$2y$10$30MDVn3Dk7PJFkYAoVvJXeM0F/vMbH4dHThOuJABsdX8JiKNq2QTO";
     private static final String ZONE_ID = "-03:00";
     private final User user = new User();
-    private final SignInUserDTO userDTO = new SignInUserDTO();
-    private final SignInUserResponseDTO responseDTO = new SignInUserResponseDTO();
+    private final SignInDTO userDTO = new SignInDTO();
+    private final SignInResponseDTO responseDTO = new SignInResponseDTO();
 
     @Mock
     private UserRepository userRepository;
@@ -44,7 +44,7 @@ public class TokenServiceTest {
     private PasswordEncoder passwordEncoder;
 
     @InjectMocks
-    private Token tokenService;
+    private TokenService tokenService;
 
     @BeforeEach
     public void setup() {
@@ -106,7 +106,6 @@ public class TokenServiceTest {
     @DisplayName("TokenService throws an exception when trying to extract the subject from an invalid JWT token")
     public void test_invalidTokenSubjectExtraction() {
         // Arrange
-        Token tokenService = new Token();
         String invalidToken = "invalid_token";
 
         // Act and Assert

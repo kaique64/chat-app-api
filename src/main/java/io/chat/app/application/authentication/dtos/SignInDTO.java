@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class SignInUserDTO {
+public class SignInDTO {
 
     @NotNull
     @NotBlank

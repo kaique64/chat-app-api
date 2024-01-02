@@ -20,7 +20,7 @@ import java.util.Optional;
 public class FilterToken extends OncePerRequestFilter {
 
     @Autowired
-    private Token tokenService;
+    private TokenService tokenService;
 
     @Autowired
     private UserRepository userRepository;
