@@ -1,8 +1,8 @@
 package io.chat.app.config.api.security.user;
 
 import io.chat.app.application.exceptions.AppException;
-import io.chat.app.application.user.dtos.SignInUserDTO;
-import io.chat.app.application.user.dtos.SignInUserResponseDTO;
+import io.chat.app.config.api.security.user.dtos.SignInUserDTO;
+import io.chat.app.config.api.security.user.dtos.SignInUserResponseDTO;
 import io.chat.app.config.api.security.user.interfaces.IAuthentication;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;

@@ -1,4 +1,4 @@
-package io.chat.app.application.user.dtos;
+package io.chat.app.config.api.security.user.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;

@@ -1,8 +1,8 @@
 package io.chat.app.usecases;
 
 import io.chat.app.application.user.dtos.CreateUserDTO;
-import io.chat.app.application.user.dtos.SignInUserDTO;
-import io.chat.app.application.user.dtos.SignInUserResponseDTO;
+import io.chat.app.config.api.security.user.dtos.SignInUserDTO;
+import io.chat.app.config.api.security.user.dtos.SignInUserResponseDTO;
 import io.chat.app.application.user.dtos.UserResponseDTO;
 import io.chat.app.config.api.security.user.Authentication;
 import io.chat.app.application.user.services.CreateUserService;
