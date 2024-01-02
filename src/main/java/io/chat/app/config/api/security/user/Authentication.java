@@ -1,10 +1,9 @@
-package io.chat.app.application.authentication;
+package io.chat.app.config.api.security.user;
 
-import io.chat.app.application.authentication.interfaces.IAuthentication;
 import io.chat.app.application.exceptions.AppException;
-import io.chat.app.application.authentication.dtos.SignInUserDTO;
-import io.chat.app.application.authentication.dtos.SignInUserResponseDTO;
-import io.chat.app.application.token.services.TokenService;
+import io.chat.app.config.api.security.user.dtos.SignInUserDTO;
+import io.chat.app.config.api.security.user.dtos.SignInUserResponseDTO;
+import io.chat.app.config.api.security.user.interfaces.IAuthentication;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -27,7 +26,7 @@ public class Authentication implements UserDetailsService, IAuthentication {
     private UserRepository userRepository;
 
     @Autowired
-    private TokenService tokenService;
+    private Token tokenService;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -55,11 +54,7 @@ public class Authentication implements UserDetailsService, IAuthentication {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword());
 
         org.springframework.security.core.Authentication authenticate = authenticationManager.authenticate(authenticationToken);
-<<<<<<<< HEAD:src/main/java/io/chat/app/application/authentication/Authentication.java
-
-========
         System.out.println("authenticate.getPrincipal() " + authenticate.getPrincipal());
->>>>>>>> a1016190e391ef274188a82430f07d7afc0dfbd6:src/main/java/io/chat/app/config/api/security/user/Authentication.java
         User user = (User) authenticate.getPrincipal();
 
         String token = tokenService.generateToken(user);

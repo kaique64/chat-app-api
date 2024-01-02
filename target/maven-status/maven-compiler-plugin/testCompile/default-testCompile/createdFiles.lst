@@ -1,0 +1,5 @@
+io\chat\app\application\services\user\CreateUserServiceTest.class
+io\chat\app\AppApplicationTests.class
+io\chat\app\application\services\chat\SaveMessageServiceTest.class
+io\chat\app\application\services\user\TokenServiceTest.class
+io\chat\app\application\services\chat\GetMessagesServiceTest.class

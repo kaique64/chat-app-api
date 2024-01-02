@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40f0686b-0bd8-46f7-b480-7e9a0fbf78ae" name="Changes" comment="'change packages'">
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/interfaces/IAuthentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/authentication/dtos/SignInUserResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/token/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/token/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/dtos/SignInUserResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/application/user/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/FilterToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/FilterToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/config/api/security/user/dtos/SignInUserResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/infra/http/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/infra/http/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/chat/app/usecases/UserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/chat/app/usecases/UserUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/io/chat/app/application/services/user/TokenServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/chat/app/application/services/user/TokenServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kaique64&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="0756b77b-5707-4e42-8940-9933a48d68fc" />
+        <option name="url" value="https://github.com/kaique64/chat-app-api.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2ZuED9fIWfK47ORkUfoFWMx7i7b" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging master",
+    "last_opened_file_path": "C:/Users/Kaique/projects/app/app",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Diff & Merge"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.chat.app.config" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.chat.app.config.api.security.user" />
+      <recent name="io.chat.app.application.user.services" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TokenServiceTest">
+    <configuration name="AuthenticationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationServiceTest.testSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
+      <option name="METHOD_NAME" value="testSignIn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationServiceTest.testSignIn_ValidUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
+      <option name="METHOD_NAME" value="testSignIn_ValidUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationServiceTest.test_valid_user_and_correct_password" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.AuthenticationServiceTest" />
+      <option name="METHOD_NAME" value="test_valid_user_and_correct_password" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokenServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.chat.app.application.services.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.chat.app.application.services.user" />
+      <option name="MAIN_CLASS_NAME" value="io.chat.app.application.services.user.TokenServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TokenServiceTest" />
+        <item itemvalue="JUnit.AuthenticationServiceTest.test_valid_user_and_correct_password" />
+        <item itemvalue="JUnit.AuthenticationServiceTest" />
+        <item itemvalue="JUnit.AuthenticationServiceTest.testSignIn_ValidUser" />
+        <item itemvalue="JUnit.AuthenticationServiceTest.testSignIn" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Kaique\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40f0686b-0bd8-46f7-b480-7e9a0fbf78ae" name="Changes" comment="" />
+      <created>1703263449019</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703263449019</updated>
+    </task>
+    <task id="LOCAL-00025" summary="create test on get messages service">
+      <option name="closed" value="true" />
+      <created>1703726783243</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1703726783243</updated>
+    </task>
+    <task id="LOCAL-00026" summary="change java version on maven and add JUnit engine and jacoco">
+      <option name="closed" value="true" />
+      <created>1703728383659</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1703728383659</updated>
+    </task>
+    <task id="LOCAL-00027" summary="add pitest">
+      <option name="closed" value="true" />
+      <created>1703790872128</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1703790872128</updated>
+    </task>
+    <task id="LOCAL-00028" summary="change query">
+      <option name="closed" value="true" />
+      <created>1703791064796</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1703791064796</updated>
+    </task>
+    <task id="LOCAL-00029" summary="add mockito">
+      <option name="closed" value="true" />
+      <created>1703794963065</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1703794963065</updated>
+    </task>
+    <task id="LOCAL-00030" summary="create utils methods">
+      <option name="closed" value="true" />
+      <created>1703794984859</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1703794984859</updated>
+    </task>
+    <task id="LOCAL-00031" summary="sort in descending order by createdAt field">
+      <option name="closed" value="true" />
+      <created>1703796967396</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1703796967396</updated>
+    </task>
+    <task id="LOCAL-00032" summary="create test to verify sort in descending order by createdAt field">
+      <option name="closed" value="true" />
+      <created>1703796981673</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1703796981673</updated>
+    </task>
+    <task id="LOCAL-00033" summary="remove logs">
+      <option name="closed" value="true" />
+      <created>1703874576602</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1703874576602</updated>
+    </task>
+    <task id="LOCAL-00034" summary="setting up pitest">
+      <option name="closed" value="true" />
+      <created>1703874595474</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1703874595474</updated>
+    </task>
+    <task id="LOCAL-00035" summary="remove not used handler">
+      <option name="closed" value="true" />
+      <created>1703875552697</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1703875552697</updated>
+    </task>
+    <task id="LOCAL-00036" summary="add swagger ui">
+      <option name="closed" value="true" />
+      <created>1703878536113</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1703878536113</updated>
+    </task>
+    <task id="LOCAL-00037" summary="create service to save a user">
+      <option name="closed" value="true" />
+      <created>1703878845777</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1703878845777</updated>
+    </task>
+    <task id="LOCAL-00038" summary="add getter and setter on DTO">
+      <option name="closed" value="true" />
+      <created>1703879178781</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1703879178781</updated>
+    </task>
+    <task id="LOCAL-00039" summary="create user entity">
+      <option name="closed" value="true" />
+      <created>1703879370498</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1703879370498</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add getter and setter">
+      <option name="closed" value="true" />
+      <created>1703879379744</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1703879379744</updated>
+    </task>
+    <task id="LOCAL-00041" summary="create save user service test class">
+      <option name="closed" value="true" />
+      <created>1703879626082</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1703879626082</updated>
+    </task>
+    <task id="LOCAL-00042" summary="create user repository">
+      <option name="closed" value="true" />
+      <created>1703879711032</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1703879711032</updated>
+    </task>
+    <task id="LOCAL-00043" summary="change class name">
+      <option name="closed" value="true" />
+      <created>1703880751673</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1703880751673</updated>
+    </task>
+    <task id="LOCAL-00044" summary="change class name">
+      <option name="closed" value="true" />
+      <created>1703880758554</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1703880758554</updated>
+    </task>
+    <task id="LOCAL-00045" summary="add email validation">
+      <option name="closed" value="true" />
+      <created>1703881301370</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1703881301370</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add spring security">
+      <option name="closed" value="true" />
+      <created>1703881310387</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1703881310387</updated>
+    </task>
+    <task id="LOCAL-00047" summary="change target classes of mutation test">
+      <option name="closed" value="true" />
+      <created>1703886282487</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1703886282487</updated>
+    </task>
+    <task id="LOCAL-00048" summary="create app exception">
+      <option name="closed" value="true" />
+      <created>1703886303998</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1703886303998</updated>
+    </task>
+    <task id="LOCAL-00049" summary="encode the password before save it and verify if user email already exists">
+      <option name="closed" value="true" />
+      <created>1703886338269</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1703886338269</updated>
+    </task>
+    <task id="LOCAL-00050" summary="create tests to encode the password before save it and verify if user email already exists">
+      <option name="closed" value="true" />
+      <created>1703886362873</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1703886362873</updated>
+    </task>
+    <task id="LOCAL-00051" summary="create security config with default encoder">
+      <option name="closed" value="true" />
+      <created>1703886385529</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1703886385529</updated>
+    </task>
+    <task id="LOCAL-00052" summary="create method to get user by email">
+      <option name="closed" value="true" />
+      <created>1703886404491</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1703886404491</updated>
+    </task>
+    <task id="LOCAL-00053" summary="create user use case">
+      <option name="closed" value="true" />
+      <created>1703886490429</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1703886490429</updated>
+    </task>
+    <task id="LOCAL-00054" summary="remove not used annotation and make just /api/user be public">
+      <option name="closed" value="true" />
+      <created>1703888160248</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1703888160248</updated>
+    </task>
+    <task id="LOCAL-00055" summary="create user controller">
+      <option name="closed" value="true" />
+      <created>1703888168256</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1703888168256</updated>
+    </task>
+    <task id="LOCAL-00056" summary="remove not used imports">
+      <option name="closed" value="true" />
+      <created>1703888194046</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1703888194046</updated>
+    </task>
+    <task id="LOCAL-00057" summary="add authentication white list">
+      <option name="closed" value="true" />
+      <created>1703956062089</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1703956062089</updated>
+    </task>
+    <task id="LOCAL-00058" summary="create swagger configuration">
+      <option name="closed" value="true" />
+      <created>1703956447040</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1703956447040</updated>
+    </task>
+    <task id="LOCAL-00059" summary="add authentication feature">
+      <option name="closed" value="true" />
+      <created>1703959760933</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1703959760934</updated>
+    </task>
+    <task id="LOCAL-00060" summary="create function to get subject from token">
+      <option name="closed" value="true" />
+      <created>1703961338921</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1703961338921</updated>
+    </task>
+    <task id="LOCAL-00061" summary="add filter before any request">
+      <option name="closed" value="true" />
+      <created>1703961355639</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1703961355639</updated>
+    </task>
+    <task id="LOCAL-00062" summary="changes packages paths">
+      <option name="closed" value="true" />
+      <created>1703961850035</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1703961850035</updated>
+    </task>
+    <task id="LOCAL-00063" summary="create custom exception handler and add http status on constructor">
+      <option name="closed" value="true" />
+      <created>1703962316022</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1703962316022</updated>
+    </task>
+    <task id="LOCAL-00064" summary="make constants be statics">
+      <option name="closed" value="true" />
+      <created>1703964205781</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1703964205781</updated>
+    </task>
+    <task id="LOCAL-00065" summary="fix types to return and create a variable to save the status value">
+      <option name="closed" value="true" />
+      <created>1703964261004</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1703964261004</updated>
+    </task>
+    <task id="LOCAL-00066" summary="implements method to sign in user on AuthenticationService">
+      <option name="closed" value="true" />
+      <created>1703964287677</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1703964287677</updated>
+    </task>
+    <task id="LOCAL-00067" summary="use sign in user">
+      <option name="closed" value="true" />
+      <created>1703964310339</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1703964310339</updated>
+    </task>
+    <task id="LOCAL-00068" summary="change package path">
+      <option name="closed" value="true" />
+      <created>1703979120054</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1703979120054</updated>
+    </task>
+    <task id="LOCAL-00069" summary="create token service test">
+      <option name="closed" value="true" />
+      <created>1703980811194</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1703980811194</updated>
+    </task>
+    <task id="LOCAL-00070" summary="create AuthenticationService interface and implement it">
+      <option name="closed" value="true" />
+      <created>1703980881514</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1703980881514</updated>
+    </task>
+    <task id="LOCAL-00071" summary="change Authentication packages">
+      <option name="closed" value="true" />
+      <created>1704155298929</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1704155298929</updated>
+    </task>
+    <task id="LOCAL-00072" summary="change dtos packages">
+      <option name="closed" value="true" />
+      <created>1704155398899</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1704155398899</updated>
+    </task>
+    <task id="LOCAL-00073" summary="change packages">
+      <option name="closed" value="true" />
+      <created>1704218533865</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1704218533865</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create tests to encode the password before save it and verify if user email already exists" />
+    <MESSAGE value="create security config with default encoder" />
+    <MESSAGE value="create method to get user by email" />
+    <MESSAGE value="create user use case" />
+    <MESSAGE value="remove not used annotation and make just /api/user be public" />
+    <MESSAGE value="create user controller" />
+    <MESSAGE value="remove not used imports" />
+    <MESSAGE value="add authentication white list" />
+    <MESSAGE value="create swagger configuration" />
+    <MESSAGE value="add authentication feature" />
+    <MESSAGE value="create function to get subject from token" />
+    <MESSAGE value="add filter before any request" />
+    <MESSAGE value="changes packages paths" />
+    <MESSAGE value="create custom exception handler and add http status on constructor" />
+    <MESSAGE value="make constants be statics" />
+    <MESSAGE value="fix types to return and create a variable to save the status value" />
+    <MESSAGE value="implements method to sign in user on AuthenticationService" />
+    <MESSAGE value="use sign in user" />
+    <MESSAGE value="change package path" />
+    <MESSAGE value="create token service test" />
+    <MESSAGE value="create AuthenticationService interface and implement it" />
+    <MESSAGE value="change Authentication packages" />
+    <MESSAGE value="change dtos packages" />
+    <MESSAGE value="change packages" />
+    <MESSAGE value="'change packages'" />
+    <option name="LAST_COMMIT_MESSAGE" value="'change packages'" />
+  </component>
+</project>

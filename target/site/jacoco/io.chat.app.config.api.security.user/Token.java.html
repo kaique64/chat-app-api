@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Token.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">io.chat.app.config.api.security.user</a> &gt; <span class="el_source">Token.java</span></div><h1>Token.java</h1><pre class="source lang-java linenums">package io.chat.app.config.api.security.user;
+
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import io.chat.app.application.user.services.interfaces.ITokenService;
+import io.chat.app.infra.database.entity.User;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+
+@Service
+<span class="fc" id="L13">public class Token implements ITokenService {</span>
+
+    private static final String SECRET = &quot;$2y$10$30MDVn3Dk7PJFkYAoVvJXeM0F/vMbH4dHThOuJABsdX8JiKNq2QTO&quot;;
+    private static final String ZONE_ID = &quot;-03:00&quot;;
+
+    public String generateToken(User user) {
+<span class="fc" id="L19">        return JWT.create()</span>
+<span class="fc" id="L20">                .withSubject(user.getUsername())</span>
+<span class="fc" id="L21">                .withClaim(&quot;id&quot;, user.getId())</span>
+<span class="fc" id="L22">                .withExpiresAt(LocalDateTime.now().plusHours(24).toInstant(ZoneOffset.of(ZONE_ID)))</span>
+<span class="fc" id="L23">                .sign(Algorithm.HMAC256(SECRET));</span>
+    }
+
+    public String getSubject(String token) {
+<span class="fc" id="L27">        return JWT.require(Algorithm.HMAC256(SECRET))</span>
+<span class="fc" id="L28">                .build().verify(token)</span>
+<span class="fc" id="L29">                .getSubject();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
