@@ -5,15 +5,17 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import io.chat.app.application.user.dtos.SignInUserDTO;
 import io.chat.app.application.user.dtos.SignInUserResponseDTO;
-import io.chat.app.application.user.services.TokenService;
+import io.chat.app.config.api.security.user.Token;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -24,6 +26,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@ExtendWith(MockitoExtension.class)
 public class TokenServiceTest {
     private static final String SECRET = "$2y$10$30MDVn3Dk7PJFkYAoVvJXeM0F/vMbH4dHThOuJABsdX8JiKNq2QTO";
     private static final String ZONE_ID = "-03:00";
@@ -41,7 +44,7 @@ public class TokenServiceTest {
     private PasswordEncoder passwordEncoder;
 
     @InjectMocks
-    private TokenService tokenService;
+    private Token tokenService;
 
     @BeforeEach
     public void setup() {
@@ -103,7 +106,7 @@ public class TokenServiceTest {
     @DisplayName("TokenService throws an exception when trying to extract the subject from an invalid JWT token")
     public void test_invalidTokenSubjectExtraction() {
         // Arrange
-        TokenService tokenService = new TokenService();
+        Token tokenService = new Token();
         String invalidToken = "invalid_token";
 
         // Act and Assert

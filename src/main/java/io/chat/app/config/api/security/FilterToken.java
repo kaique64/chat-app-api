@@ -1,6 +1,6 @@
 package io.chat.app.config.api.security;
 
-import io.chat.app.application.user.services.TokenService;
+import io.chat.app.config.api.security.user.Token;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
 import jakarta.servlet.FilterChain;
@@ -20,7 +20,7 @@ import java.util.Optional;
 public class FilterToken extends OncePerRequestFilter {
 
     @Autowired
-    private TokenService tokenService;
+    private Token tokenService;
 
     @Autowired
     private UserRepository userRepository;

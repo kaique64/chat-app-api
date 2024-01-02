@@ -1,9 +1,9 @@
-package io.chat.app.application.user.services;
+package io.chat.app.config.api.security.user;
 
 import io.chat.app.application.exceptions.AppException;
 import io.chat.app.application.user.dtos.SignInUserDTO;
 import io.chat.app.application.user.dtos.SignInUserResponseDTO;
-import io.chat.app.application.user.services.interfaces.IAuthenticationService;
+import io.chat.app.config.api.security.user.interfaces.IAuthentication;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,13 +20,13 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class AuthenticationService implements UserDetailsService, IAuthenticationService {
+public class Authentication implements UserDetailsService, IAuthentication {
 
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
-    private TokenService tokenService;
+    private Token tokenService;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -35,7 +34,7 @@ public class AuthenticationService implements UserDetailsService, IAuthenticatio
     private final AuthenticationManager authenticationManager;
 
     @Autowired
-    public AuthenticationService(@Lazy AuthenticationManager authenticationManager) {
+    public Authentication(@Lazy AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
 
@@ -54,12 +53,11 @@ public class AuthenticationService implements UserDetailsService, IAuthenticatio
 
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword());
 
-        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
-
+        org.springframework.security.core.Authentication authenticate = authenticationManager.authenticate(authenticationToken);
+        System.out.println("authenticate.getPrincipal() " + authenticate.getPrincipal());
         User user = (User) authenticate.getPrincipal();
 
         String token = tokenService.generateToken(user);
-
         SignInUserResponseDTO signInUserResponseDTO = modelMapper.map(user, SignInUserResponseDTO.class);
         signInUserResponseDTO.setToken(token);
 

@@ -1,4 +1,4 @@
-package io.chat.app.application.user.services;
+package io.chat.app.config.api.security.user;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 @Service
-public class TokenService implements ITokenService {
+public class Token implements ITokenService {
 
     private static final String SECRET = "$2y$10$30MDVn3Dk7PJFkYAoVvJXeM0F/vMbH4dHThOuJABsdX8JiKNq2QTO";
     private static final String ZONE_ID = "-03:00";
