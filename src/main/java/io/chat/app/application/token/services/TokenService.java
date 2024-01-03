@@ -13,8 +13,8 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService implements ITokenService {
 
-//    @Value("${jwt.secret}")
-    private String SECRET = "$2y$10$30MDVn3Dk7PJFkYAoVvJXeM0F/vMbH4dHThOuJABsdX8JiKNq2QTO";
+    @Value("${jwt.secret}")
+    private String SECRET;
     private static final String ZONE_ID = "-03:00";
 
     public String generateToken(User user) {
