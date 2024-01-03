@@ -18,6 +18,8 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -27,8 +29,9 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
+@ContextConfiguration
 public class TokenServiceTest {
-    private static final String SECRET = "$2y$10$30MDVn3Dk7PJFkYAoVvJXeM0F/vMbH4dHThOuJABsdX8JiKNq2QTO";
+    private static final String SECRET = "mocked-secret";
     private static final String ZONE_ID = "-03:00";
     private final User user = new User();
     private final SignInDTO userDTO = new SignInDTO();
@@ -61,6 +64,7 @@ public class TokenServiceTest {
         responseDTO.setEmail(user.getEmail());
 
         MockitoAnnotations.openMocks(this);
+        ReflectionTestUtils.setField(tokenService, "SECRET", "jwt-secret-mock");
     }
 
     @Test
