@@ -8,6 +8,7 @@ import io.chat.app.application.exceptions.AppException;
 import io.chat.app.application.token.services.TokenService;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,9 +26,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class Auth implements UserDetailsService, IAuth {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppApplication.class);
 
     @Autowired
     private UserRepository userRepository;
@@ -46,17 +47,17 @@ public class Auth implements UserDetailsService, IAuth {
     }
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        logger.info("Searching for user with email " + username);
+        log.info("Searching for user with email " + username);
 
         Optional<User> user = userRepository.findByEmail(username);
 
         if (user.isPresent()) {
-            logger.info("User with email " + username + " found successfully");
+            log.info("User with email " + username + " found successfully");
 
             return modelMapper.map(user, UserDetails.class);
         }
 
-        logger.warn("No user with email " + username + " found");
+        log.warn("No user with email " + username + " found");
 
         return null;
     }
@@ -66,20 +67,20 @@ public class Auth implements UserDetailsService, IAuth {
 
         if (userDetails == null) throw new AppException("User not found", HttpStatus.NOT_FOUND);
 
-        logger.info("Create authentication token");
+        log.info("Create authentication token");
 
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword());
 
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
         User user = (User) authenticate.getPrincipal();
 
-        logger.info("Authentication token created successfully");
+        log.info("Authentication token created successfully");
 
-        logger.info("Generating token");
+        log.info("Generating token");
 
         String token = tokenService.generateToken(user);
 
-        logger.info("Token generated successfully");
+        log.info("Token generated successfully");
 
         SignInResponseDTO signInUserResponseDTO = modelMapper.map(user, SignInResponseDTO.class);
         signInUserResponseDTO.setToken(token);
