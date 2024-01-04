@@ -10,3 +10,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: chatdb
+  chat-api:
+    image: 'chat-api:latest'
+    ports:
+      - '8080:8080'
