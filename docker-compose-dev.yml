@@ -14,8 +14,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
       MONGO_INITDB_DATABASE: ${MONGODB_DATABASE}
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:27017" ]
-      interval: 30s
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 20s
       timeout: 10s
       retries: 5
   chat-api:
