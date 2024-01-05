@@ -133,6 +133,17 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.11</version>
+				<configuration>
+					<excludes>
+						<exclude>io/chat/app/application/**/dtos/*</exclude>
+						<exclude>io/chat/app/application/**/exceptions/*</exclude>
+						<exclude>io/chat/app/application/**/authentication/*</exclude>
+						<exclude>io/chat/app/config/**/*</exclude>
+						<exclude>io/chat/app/usecases/*</exclude>
+						<exclude>io/chat/app/infra/database/**/*</exclude>
+						<exclude>io/chat/app/infra/http/controller/advices/*</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
