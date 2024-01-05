@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: 'mongodb://root:root@localhost:27017/chatdb-test?authSource=admin'
+jwt:
+  secret: '$2y$10$30MDVn3Dk7PJFkYAoVvJXeM0F/vMbH4dHThOuJABsdX8JiKNq2QTO'
