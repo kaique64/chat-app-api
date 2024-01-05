@@ -16,6 +16,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Sort;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,6 +30,7 @@ public class GetMessagesServiceTest {
     private final List<Chat> messages = new ArrayList<>();
     private final Chat chatMessage = new Chat();
     private final ChatResponseDTO message = new ChatResponseDTO();
+    private static final String ZONE_ID = "-03:00";
 
     @Mock
     private ChatRepository chatRepository;
@@ -100,8 +103,9 @@ public class GetMessagesServiceTest {
         String to = "recipient";
 
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime oneMinuteAgo = now.minusMinutes(1);
-        LocalDateTime twoMinutesAgo = now.minusMinutes(2);
+        LocalDateTime nowBrasilianZone = now.atZone(ZoneId.of(ZONE_ID)).toLocalDateTime();
+        LocalDateTime oneMinuteAgo = nowBrasilianZone.minusMinutes(1);
+        LocalDateTime twoMinutesAgo = nowBrasilianZone.minusMinutes(2);
 
         Chat chat1 = createChat(from, to, "Hello", now);
         Chat chat2 = createChat(from, to, "Hi", oneMinuteAgo);
