@@ -5,8 +5,6 @@ import io.chat.app.AppApplication;
 import io.chat.app.application.authentication.dtos.SignInDTO;
 import io.chat.app.application.user.dtos.CreateUserDTO;
 import io.chat.app.application.user.services.CreateUserService;
-import io.chat.app.infra.database.entity.User;
-import io.chat.app.infra.database.repository.UserRepository;
 import io.chat.app.util.MongoDBDropDatabase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
