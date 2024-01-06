@@ -20,6 +20,7 @@ services:
       retries: 5
   chat-api:
     image: 'chat-api:latest'
+    container_name: 'chat-api'
     environment:
       SPRING_PROFILES_ACTIVE: 'qa'
       SPRING_DATA_MONGODB_URI: ${MONGODB_URI}
@@ -33,6 +34,33 @@ services:
       - mongodb
     links:
       - mongodb
+  prometheus:
+    image: 'prom/prometheus:latest'
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - chat-api-networks
+    ports:
+      - '9090:9090'
+  grafana:
+    image: 'grafana/grafana:latest'
+    volumes:
+      - grafana_data:/var/lib/grafana
+    ports:
+      - 3000:3000
+    networks:
+      - chat-api-networks
+    depends_on:
+      prometheus:
+        condition: service_started
+    links:
+      - prometheus
+
 networks:
   chat-api-networks:
     driver: bridge
+
+volumes:
+  prometheus_data:
+  grafana_data:
