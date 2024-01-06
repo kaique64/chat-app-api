@@ -15,6 +15,7 @@ if [ ! -f "$env_file" ]; then
     exit 1
 fi
 
+# shellcheck disable=SC2046
 export $(cat $env_file | xargs)
 if [ -z "$1" ]; then
     echo "Exported LOCAL"
