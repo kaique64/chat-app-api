@@ -25,7 +25,7 @@ public class CustomExceptionHandler {
         responseBody.put("error", ex.getHttpStatus().name());
         responseBody.put("message", ex.getMessage());
 
-        return new ResponseEntity<>(responseBody, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(responseBody, ex.getHttpStatus());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
