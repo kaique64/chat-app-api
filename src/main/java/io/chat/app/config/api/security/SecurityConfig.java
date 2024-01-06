@@ -23,7 +23,8 @@ public class SecurityConfig {
             "/v2/api-docs/**",
             "/swagger-resources/**",
             "/api/user",
-            "/api/user/sign-in"
+            "/api/user/sign-in",
+            "/actuator/**"
     };
 
     @Autowired
