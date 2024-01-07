@@ -26,7 +26,8 @@ public class ChatController {
 
     @MessageMapping("/chat-message")
     @SendTo("/chat/messages")
-    public ChatResponseDTO sendMessage(@Payload @Valid CreateMessageDTO messageDTO) {
+    @PostMapping("/messages")
+    public ChatResponseDTO sendMessage(@Payload @RequestBody @Valid CreateMessageDTO messageDTO) {
         ChatResponseDTO sentMessage = chatUseCase.saveMessage(messageDTO);
         template.convertAndSendToUser(
                 sentMessage.getRecipientId(),
