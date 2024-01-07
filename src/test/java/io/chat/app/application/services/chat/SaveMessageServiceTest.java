@@ -102,8 +102,6 @@ public class SaveMessageServiceTest {
 
     @Test
     public void test_throwExceptionIfMessageDTOIsNull() {
-        when(saveMessageService.saveMessage(null)).thenThrow(NullPointerException.class);
-
         assertThrows(NullPointerException.class, () -> {
             saveMessageService.saveMessage(null);
         });
