@@ -3,6 +3,7 @@ package io.chat.app.application.services.chat;
 import io.chat.app.application.chat.dtos.ChatResponseDTO;
 import io.chat.app.application.chat.dtos.CreateMessageDTO;
 import io.chat.app.application.chat.services.SaveMessageService;
+import io.chat.app.application.exceptions.AppException;
 import io.chat.app.infra.database.entity.Chat;
 import io.chat.app.infra.database.entity.User;
 import io.chat.app.infra.database.repository.ChatRepository;
@@ -98,6 +99,51 @@ public class SaveMessageServiceTest {
 
         // Verify specific arguments passed to the methods
         verify(modelMapper).map(eq(messageDTO), eq(Chat.class));
+    }
+
+    @Test
+    @DisplayName("throws an AppException with status NOT_FOUND if sender id is not found in the database")
+    public void test_saveMessage_senderNotFound() {
+        // Arrange
+        CreateMessageDTO messageDTO = new CreateMessageDTO();
+        messageDTO.setSenderId("senderId");
+        messageDTO.setRecipientId("recipientId");
+        messageDTO.setMessage("message");
+
+        when(userRepository.findById(messageDTO.getSenderId())).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThrows(AppException.class, () -> {
+            saveMessageService.saveMessage(messageDTO);
+        });
+
+        // Verify interactions
+        verify(userRepository, times(1)).findById(messageDTO.getSenderId());
+    }
+
+    @Test
+    @DisplayName("throws an AppException with status NOT_FOUND if recipient id is not found in the database")
+    public void test_saveMessage_recipientNotFound() {
+        // Arrange
+        CreateMessageDTO messageDTO = new CreateMessageDTO();
+        messageDTO.setSenderId("senderId");
+        messageDTO.setRecipientId("recipientId");
+        messageDTO.setMessage("message");
+
+        User sender = new User();
+        sender.setId("senderId");
+
+        when(userRepository.findById(messageDTO.getSenderId())).thenReturn(Optional.of(sender));
+        when(userRepository.findById(messageDTO.getRecipientId())).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThrows(AppException.class, () -> {
+            saveMessageService.saveMessage(messageDTO);
+        });
+
+        // Verify interactions
+        verify(userRepository, times(1)).findById(messageDTO.getSenderId());
+        verify(userRepository, times(1)).findById(messageDTO.getRecipientId());
     }
 
     @Test
