@@ -105,8 +105,8 @@ public class GetMessagesRouteTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(DEFAULT_MEDIATYPE_REQUEST))
                 .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].message").value("Hello John"));
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[1].message").value("Hello John"));
     }
 
     @Test
